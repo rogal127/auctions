@@ -19,5 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('auctions', [AuctionController::class, 'index']);
-Route::get('auctions/{auction}', [AuctionController::class, 'show']);
+Route::apiResource('auctions', AuctionController::class);
