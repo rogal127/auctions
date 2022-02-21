@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('auctions', function (Blueprint $table) {
+        Schema::create('bids', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->integer('start_price');
-            $table->date('date_end');
-            $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('user')->constrained();
+            $table->foreignId('auction')->constrained();
+            $table->integer('value');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('auctions');
+        Schema::dropIfExists('bids');
     }
 };
