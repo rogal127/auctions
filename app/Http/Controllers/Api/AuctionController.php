@@ -10,6 +10,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuctionController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum')->except(['index', 'show']);
+    }
+
     public function index()
     {
         $auctions = Auction::with('category')->get();

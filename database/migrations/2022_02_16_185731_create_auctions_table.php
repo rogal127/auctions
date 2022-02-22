@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('start_price');
             $table->date('date_end');
             $table->foreignId('category_id')->constrained('categories');
-            $table->foreignId('user')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

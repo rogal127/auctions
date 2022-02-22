@@ -9,6 +9,16 @@ use App\Models\Bid;
 
 class BidController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
+
     public function store(StoreBidRequest $request)
     {
         $bid = Bid::create($request->all());

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('bids', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user')->constrained();
-            $table->foreignId('auction')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('auction_id')->constrained();
             $table->integer('value');
             $table->timestamps();
         });
