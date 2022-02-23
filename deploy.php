@@ -9,7 +9,7 @@ set('writable_mode', 'chown');
 set('application', 'SzlachetneInwestycje');
 
 // Project repository
-set('repository', 'git@github.com:rogal127/exchange.git');
+set('repository', 'git@github.com:rogal127/auctions.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
