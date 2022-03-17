@@ -72,7 +72,7 @@ task('deploy', [
     'deploy:shared',
     'deploy:copy_dirs',
     'deploy:writable',
-    'deploy:vendors',
+    //'deploy:vendors',
     'deploy:clear_paths',
     'deploy:symlink',
     'deploy:unlock',

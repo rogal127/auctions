@@ -28,6 +28,7 @@ class AuthController extends Controller
 
         return response()->json([
             'access_token' => $token,
+            'user' => $this->prepareUserData($user),
             'token_type' => 'Bearer',
         ]);
     }
@@ -46,6 +47,7 @@ class AuthController extends Controller
 
         return response()->json([
                 'access_token' => $token,
+                'user' => $this->prepareUserData($user),
                 'token_type' => 'Bearer',
         ]);
     }
@@ -53,5 +55,13 @@ class AuthController extends Controller
     public function me(Request $request)
     {
         return $request->user();
+    }
+
+    private function prepareUserData($user)
+    {
+        return [
+            'name' => $user->name,
+            'email' => $user->email
+        ];
     }
 }
