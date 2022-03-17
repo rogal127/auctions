@@ -21,6 +21,8 @@ class AuctionFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'description' => $this->faker->text(500),
+            'rooms_quantity' => rand(2,7),
+            'meters' => rand(24, 300),
             'date_end' => date('Y-m-d', strtotime(date('Y-m-d') . '+ 7 days')),
             'start_price' => rand(5000000, 9900000),
             'category_id' => Category::inRandomOrder()->first()->id,

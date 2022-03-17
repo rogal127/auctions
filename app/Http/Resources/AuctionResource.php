@@ -20,6 +20,7 @@ class AuctionResource extends JsonResource
             'description' => $this->description,
             'date_end' => $this->date_end,
             'start_price' => $this->start_price/100,
+            'image' => 'https://via.placeholder.com/800x600.png/00aaee?text=auctions',
             'category' => new CategoryResource($this->category)
         ];
     }

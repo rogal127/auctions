@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->text('rooms_quantity');
+            $table->text('meters');
             $table->integer('start_price');
             $table->date('date_end');
             $table->foreignId('category_id')->constrained('categories');
