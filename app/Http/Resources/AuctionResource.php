@@ -21,6 +21,8 @@ class AuctionResource extends JsonResource
             'date_end' => $this->date_end,
             'start_price' => $this->start_price/100,
             'image' => 'https://via.placeholder.com/800x600.png/00aaee?text=auctions',
+            'meters' => $this->meters,
+            'rooms_quantity' => $this->rooms_quantity,
             'category' => new CategoryResource($this->category)
         ];
     }
