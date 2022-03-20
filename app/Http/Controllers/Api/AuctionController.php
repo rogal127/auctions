@@ -22,7 +22,7 @@ class AuctionController extends Controller
 
     public function index()
     {
-        $auctions = Auction::with('category')->get();
+        $auctions = Auction::with('category')->paginate(5);
 
         return AuctionResource::collection($auctions);
     }
